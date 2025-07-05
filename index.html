@@ -77,6 +77,14 @@
         .social-links a:hover {
             color: var(--accent);
         }
+        .logo {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #D5BDAF; /* optional: adds a border in your palette */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
         @media (max-width: 700px) {
             .top-row {
                 flex-direction: column;
@@ -96,7 +104,7 @@
 </head>
 <body>
     <header class="top-row">
-        <img src="images/vekst.png" alt="Vekst.no Logo">
+        <img src="images/vekst.png" alt="Vekst.no Logo" class="logo">
         <nav class="links">
             <a href="#home"><i class="fas fa-home"></i> Home</a>
             <a href="#about"><i class="fas fa-info-circle"></i> About</a>
