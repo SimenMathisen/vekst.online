@@ -1,4 +1,4 @@
-# vekst.no
+# vekst.online
 Github pages repositoryet til vekst.no
 
 ## Struktur 
