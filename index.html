@@ -3,9 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Web Page</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/allbody {
-            font-family: Arial, sans-serif;
+    <title>Vekst.no</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --col1: #EDEDE9;
+            --col2: #D6CCC2;
+            --col3: #F5EBE0;
+            --col4: #E3D5CA;
+            --col5: #D5BDAF;
+            --accent: #8E7C68;
+        }
+        body {
+            background: var(--col1);
+            font-family: 'Segoe UI', Arial, sans-serif;
+            color: #333;
             margin: 0;
             padding: 0;
         }
@@ -13,86 +25,98 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 10px;
-            background-color: #f8f8f8;
-            border-bottom: 1px solid #ddd;
+            padding: 1rem 2rem;
+            background: var(--col2);
+            border-bottom: 2px solid var(--col5);
         }
         .top-row img {
-            height: 50px;
+            height: 60px;
         }
-        .top-row .links {
+        .links {
             display: flex;
-            gap: 15px;
+            gap: 1rem;
         }
-        .top-row .links a {
-            text-decoration: none;
+        .links a {
             color: #333;
-            font-weight: bold;
-            padding: 5px 10px;
-            border-radius: 5px;
-            transition: background-color 0.3s, color 0.3s;
+            text-decoration: none;
+            background: var(--col4);
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            transition: background 0.2s, color 0.2s;
         }
-        .top-row .links a:hover {
-            background-color: #333;
-            color: #fff;
+        .links a:hover {
+            background: var(--col5);
+            color: var(--accent);
+        }
+        main {
+            max-width: 800px;
+            margin: 3rem auto 2rem auto;
+            background: var(--col3);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.03);
         }
         .footer {
-            background-color: #f8f8f8;
+            background: var(--col2);
             text-align: center;
-            padding: 10px;
-            border-top: 1px solid #ddd;
-            position: sticky;
-            bottom: 0;
-            width: 100%;
+            padding: 1rem;
+            border-top: 2px solid var(--col5);
         }
-        .footer .social-links {
+        .social-links {
+            margin-top: 0.5rem;
             display: flex;
             justify-content: center;
-            gap: 15px;
-            margin-top: 10px;
+            gap: 1.2rem;
         }
-        .footer .social-links a {
-            text-decoration: none;
+        .social-links a {
             color: #333;
-            font-size: 20px;
-            padding: 5px 10px;
-            border-radius: 5px;
-            transition: background-color 0.3s, color 0.3s;
+            font-size: 1.3rem;
+            transition: color 0.2s;
         }
-        .footer .social-links a:hover {
-            background-color: #333;
-            color: #fff;
+        .social-links a:hover {
+            color: var(--accent);
         }
-        @media (max-width: 600px) {
+        @media (max-width: 700px) {
             .top-row {
                 flex-direction: column;
                 align-items: flex-start;
+                padding: 1rem;
             }
-            .top-row .links {
+            .links {
                 flex-direction: column;
-                align-items: flex-start;
-                gap: 10px;
-                margin-top: 10px;
+                width: 100%;
+                gap: 0.5rem;
             }
-            .footer .social-links {
-                flex-direction: column;
-                gap: 10px;
+            main {
+                padding: 1rem;
             }
         }
     </style>
 </head>
 <body>
-    <div class="top-row">
-        <img src="your-image-url.jpg" alt="Logo">
-        <div class="links">
-            <a href="#link1"><i class="fas fa-home"></i> Link 1</a>
-            <a href="#link2"><i class="fas fa-info-circle"></i> Link 2</a>
-            <a href="#link3"><i class="fas fa-envelope"></i> Link 3</a>
-            <a href="#link4"><i class="fas fa-phone"></i> Link 4</a>
-        </div>
-    </div>
-
-    <div class="footer">
-        &copy; 2025 Your Company. All rights reserved.
+    <header class="top-row">
+        <img src="your-logo.png" alt="Vekst.no Logo">
+        <nav class="links">
+            <a href="#home"><i class="fas fa-home"></i> Home</a>
+            <a href="#about"><i class="fas fa-info-circle"></i> About</a>
+            <a href="#services"><i class="fas fa-seedling"></i> Services</a>
+            <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+        </nav>
+    </header>
+    <main>
+        <h1>Welcome to Vekst.no</h1>
+        <p>
+            This is your main content area. Replace this with information about your company, services, or anything else you'd like to highlight. The page is fully responsive and uses your preferred color palette for a soft, modern look.
+        </p>
+    </main>
+    <footer class="footer">
+        &copy; 2025 Vekst.no. All rights reserved.
         <div class="social-links">
-            <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebookhref="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i> Instagram</a="fab fa-linkedin-in"></i
+            <a href="https://www.facebook.com" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+    </footer>
+</body>
+</html>
