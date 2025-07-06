@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vekst.no</title>
+    <meta name="description" content="Welcome to Vekst.no - Learn about our services and offerings.">
+    <link rel="icon" type="image/png" href="images/favicon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -13,11 +15,14 @@
             --col4: #E3D5CA;
             --col5: #D5BDAF;
             --accent: #8E7C68;
+            --text: #222;
+            --hover-bg: #D5BDAF;
+            --focus-outline: #8E7C68;
         }
         body {
             background: var(--col1);
             font-family: 'Segoe UI', Arial, sans-serif;
-            color: #333;
+            color: var(--text);
             margin: 0;
             padding: 0;
         }
@@ -28,16 +33,25 @@
             padding: 1rem 2rem;
             background: var(--col2);
             border-bottom: 2px solid var(--col5);
+            position: relative;
         }
         .top-row img {
             height: 60px;
+        }
+        .logo {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid var(--col5);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
         }
         .links {
             display: flex;
             gap: 1rem;
         }
         .links a {
-            color: #333;
+            color: var(--text);
             text-decoration: none;
             background: var(--col4);
             font-weight: 500;
@@ -45,9 +59,25 @@
             border-radius: 6px;
             transition: background 0.2s, color 0.2s;
         }
-        .links a:hover {
-            background: var(--col5);
+        .links a:hover,
+        .links a:focus {
+            background: var(--hover-bg);
             color: var(--accent);
+            outline: 2px solid var(--focus-outline);
+            outline-offset: 2px;
+        }
+        .links a.active {
+            border-bottom: 2px solid var(--accent);
+            font-weight: bold;
+        }
+        .hamburger-menu {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: var(--text);
+            cursor: pointer;
+            margin-left: 1rem;
         }
         main {
             max-width: 800px;
@@ -70,20 +100,15 @@
             gap: 1.2rem;
         }
         .social-links a {
-            color: #333;
+            color: var(--text);
             font-size: 1.3rem;
             transition: color 0.2s;
         }
-        .social-links a:hover {
+        .social-links a:hover,
+        .social-links a:focus {
             color: var(--accent);
-        }
-        .logo {
-            width: 100px;
-            height: 100px;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 3px solid #D5BDAF; /* optional: adds a border in your palette */
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            outline: 2px solid var(--focus-outline);
+            outline-offset: 2px;
         }
         @media (max-width: 700px) {
             .top-row {
@@ -95,18 +120,40 @@
                 flex-direction: column;
                 width: 100%;
                 gap: 0.5rem;
+                display: none;
+                margin-top: 1rem;
+            }
+            .links.open {
+                display: flex;
+            }
+            .hamburger-menu {
+                display: block;
+                position: absolute;
+                right: 1.5rem;
+                top: 1.3rem;
             }
             main {
                 padding: 1rem;
             }
         }
     </style>
+    <!-- Placeholder for analytics (e.g., Google Analytics) -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXX-X"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-XXXXXXX-X');
+    </script> -->
 </head>
 <body>
     <header class="top-row">
-        <img src="images/vekst.png" alt="Vekst.no Logo" class="logo">
-        <nav class="links">
-            <a href="#home"><i class="fas fa-home"></i> Home</a>
+        <img src="images/vekst.png" alt="Vekst.no Company Logo" class="logo">
+        <button class="hamburger-menu" aria-label="Toggle navigation" aria-controls="main-nav">
+            <i class="fas fa-bars"></i>
+        </button>
+        <nav class="links" id="main-nav" aria-label="Main navigation">
+            <a href="#home" class="active"><i class="fas fa-home"></i> Home</a>
             <a href="#about"><i class="fas fa-info-circle"></i> About</a>
             <a href="#services"><i class="fas fa-seedling"></i> Services</a>
             <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
@@ -115,16 +162,33 @@
     <main>
         <h1>Welcome to Vekst.no</h1>
         <p>
-            This is your main content area. Replace this with information about your company, services, or anything else you'd like to highlight. The page is fully responsive and uses your preferred color palette for a soft, modern look.
+            This is your main content area. Replace this with information about your company, services, or anything else you'd like to highlight. The page is fully responsive and uses your preferred color palette.
         </p>
     </main>
     <footer class="footer">
         &copy; 2025 Vekst.no. All rights reserved.
         <div class="social-links">
-            <a href="https://www.facebook.com" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.linkedin.com" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" title="Facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" title="Instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" title="LinkedIn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
         </div>
     </footer>
+    <script>
+        // Hamburger menu toggle for mobile
+        const hamburger = document.querySelector('.hamburger-menu');
+        const navLinks = document.querySelector('.links');
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('open');
+        });
+
+        // Active link styling (optional, based on hash)
+        const links = document.querySelectorAll('.links a');
+        links.forEach(link => {
+            link.addEventListener('click', function() {
+                links.forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
 </body>
 </html>
