@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook Feed | vekst.online</title>
+    <meta name="description" content="Latest posts from our Facebook page.">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <style>
+        body {
+            background: #EDEDE9;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            color: #222;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header, footer {
+            background: #D6CCC2;
+            padding: 1rem 2rem;
+            text-align: center;
+        }
+        main {
+            flex: 1 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 2rem 1rem;
+        }
+        h1 {
+            margin-top: 0;
+        }
+        .fb-page {
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Facebook Feed</h1>
+        <nav>
+            <a href="index.html">Home</a>
+        </nav>
+    </header>
+    <main>
+        <!-- Facebook SDK -->
+        <div id="fb-root"></div>
+        <script async defer crossorigin="anonymous"
+          src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v19.0"
+          nonce="abc123"></script>
+        <!-- Facebook Page Plugin -->
+        <div class="fb-page"
+             data-href="https://www.facebook.com/profile.php?id=61576892337524"
+             data-tabs="timeline"
+             data-width="340"
+             data-height="500"
+             data-small-header="false"
+             data-adapt-container-width="true"
+             data-hide-cover="false"
+             data-show-facepile="true">
+          <blockquote cite="https://www.facebook.com/profile.php?id=61576892337524" class="fb-xfbml-parse-ignore">
+            <a href="https://www.facebook.com/profile.php?id=61576892337524">Facebook</a>
+          </blockquote>
+        </div>
+    </main>
+    <footer>
+        &copy; 2025 vekst.online
+    </footer>
+</body>
+</html>
