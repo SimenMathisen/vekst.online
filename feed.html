@@ -3,70 +3,375 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feed | Vekst</title>
-    <meta name="description" content="Latest posts and updates from Vekst's Facebook page.">
+    <title>Social Feed | Vekst</title>
+    <meta name="description" content="Hold deg oppdatert med hva Vekst holder på med.">
+    <meta name="keywords" content="vekst, social media, updates, news, facebook feed">
+    <meta name="author" content="Vekst">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://vekst.online/feed.html">
+    <meta property="og:title" content="Social Feed | Vekst">
+    <meta property="og:description" content="Stay updated with the latest posts and updates from Vekst.">
+    <meta property="og:image" content="https://vekst.online/images/vekst.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://vekst.online/feed.html">
+    <meta property="twitter:title" content="Social Feed | Vekst">
+    <meta property="twitter:description" content="Stay updated with the latest posts and updates from Vekst.">
+    <meta property="twitter:image" content="https://vekst.online/images/vekst.png">
+    
     <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="apple-touch-icon" href="images/vekst.png">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://connect.facebook.net">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="css/styles.css" as="style">
+    <link rel="preload" href="images/vekst.png" as="image">
 </head>
 <body>
     <header class="top-row">
-        <img src="images/vekst.png" alt="Vekst Company Logo" class="logo">
-        <button class="hamburger-menu" aria-label="Toggle navigation" aria-controls="main-nav">
-            <i class="fas fa-bars"></i>
+        <img src="images/vekst.png" alt="Vekst Company Logo" class="logo" loading="eager">
+        <button class="hamburger-menu" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="main-nav">
+            <i class="fas fa-bars" aria-hidden="true"></i>
         </button>
-        <nav class="links" id="main-nav" aria-label="Main navigation">
-            <a href="index.html"><i class="fas fa-home"></i> Home</a>
-            <a href="#about"><i class="fas fa-info-circle"></i> About</a>
-            <a href="feed.html" class="active"><i class="fas fa-seedling"></i> Feed</a>
-            <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+        <nav class="links" id="main-nav" role="navigation" aria-label="Main navigation">
+            <a href="index.html">
+                <i class="fas fa-home" aria-hidden="true"></i> 
+                <span>Home</span>
+            </a>
+            <a href="about.html">
+                <i class="fas fa-info-circle" aria-hidden="true"></i> 
+                <span>About</span>
+            </a>
+            <a href="feed.html" class="active" aria-current="page">
+                <i class="fas fa-seedling" aria-hidden="true"></i> 
+                <span>Feed</span>
+            </a>
+            <a href="contact.html">
+                <i class="fas fa-envelope" aria-hidden="true"></i> 
+                <span>Contact</span>
+            </a>
         </nav>
     </header>
-    <main>
-        <h1>Facebook Feed</h1>
-        <!-- Facebook SDK -->
-        <div id="fb-root"></div>
-        <script async defer crossorigin="anonymous"
+    
+    <main role="main">
+        <section class="feed-header">
+            <h1>
+                <i class="fas fa-seedling" aria-hidden="true"></i>
+                Stay Connected
+            </h1>
+            <p class="feed-description">
+                Follow our journey and stay updated with the latest news, insights, and updates 
+                from Vekst. Connect with our community and be part of our growth story.
+            </p>
+        </section>
+        
+        <section class="social-feed-container">
+            <div class="feed-intro">
+                <h2>Latest Updates</h2>
+                <p>
+                    Here you'll find our most recent posts, announcements, and insights. 
+                    Join the conversation and engage with our community.
+                </p>
+            </div>
+            
+            <!-- Loading indicator for Facebook feed -->
+            <div id="fb-loading" class="loading-indicator">
+                <div class="spinner"></div>
+                <p>Loading social feed...</p>
+            </div>
+            
+            <!-- Facebook SDK -->
+            <div id="fb-root"></div>
+            
+            <!-- Facebook Page Plugin with improved settings -->
+            <div class="facebook-container">
+			<script async defer crossorigin="anonymous"
           src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v19.0"
           nonce="abc123"></script>
-        <!-- Facebook Page Plugin -->
-        <div class="fb-page"
-             data-href="https://www.facebook.com/profile.php?id=61576892337524"
-             data-tabs="timeline"
-             data-width="340"
-             data-height="500"
-             data-small-header="false"
-             data-adapt-container-width="true"
-             data-hide-cover="false"
-             data-show-facepile="true">
-          <blockquote cite="https://www.facebook.com/profile.php?id=61576892337524" class="fb-xfbml-parse-ignore">
-            <a href="https://www.facebook.com/profile.php?id=61576892337524">Facebook</a>
-          </blockquote>
-        </div>
+                <div class="fb-page"
+                     data-href="https://www.facebook.com/profile.php?id=61576892337524"
+                     data-tabs="timeline"
+                     data-width="500"
+                     data-height="600"
+                     data-small-header="false"
+                     data-adapt-container-width="true"
+                     data-hide-cover="false"
+                     data-show-facepile="true"
+                     data-lazy="false">
+                  <blockquote cite="https://www.facebook.com/profile.php?id=61576892337524" class="fb-xfbml-parse-ignore">
+                    <a href="https://www.facebook.com/profile.php?id=61576892337524" 
+                       target="_blank" 
+                       rel="noopener noreferrer">
+                        Visit our Facebook page
+                    </a>
+                  </blockquote>
+                </div>
+            </div>
+            
+            <!-- Fallback content if Facebook feed fails to load -->
+            <div id="fb-fallback" class="feed-fallback" style="display: none;">
+                <div class="fallback-content">
+                    <i class="fas fa-exclamation-triangle" aria-hidden="true"></i>
+                    <h3>Unable to Load Social Feed</h3>
+                    <p>We're having trouble loading our social media feed right now. This could be due to:</p>
+                    <ul>
+                        <li>Facebook's privacy settings</li>
+                        <li>Ad blockers or browser restrictions</li>
+                        <li>Temporary connectivity issues</li>
+                    </ul>
+                    <a href="https://www.facebook.com/profile.php?id=61576892337524" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="fallback-link">
+                        <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                        Visit our Facebook page directly
+                    </a>
+                </div>
+            </div>
+        </section>width="500"
+                     data-height="600"
+                     data-small-header="false"
+                     data-adapt-container-width="true"
+                     data-hide-cover="false"
+                     data-show-facepile="true"
+                     data-lazy="true">
+                  <blockquote cite="https://www.facebook.com/profile.php?id=61576892337524" class="fb-xfbml-parse-ignore">
+                    <a href="https://www.facebook.com/profile.php?id=61576892337524" 
+                       target="_blank" 
+                       rel="noopener noreferrer">
+                        Visit our Facebook page
+                    </a>
+                  </blockquote>
+                </div>
+            </div>
+            
+            <!-- Fallback content if Facebook feed fails to load -->
+            <div id="fb-fallback" class="feed-fallback" style="display: none;">
+                <div class="fallback-content">
+                    <i class="fas fa-exclamation-triangle" aria-hidden="true"></i>
+                    <h3>Unable to Load Social Feed</h3>
+                    <p>We're having trouble loading our social media feed right now.</p>
+                    <a href="https://www.facebook.com/profile.php?id=61576892337524" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="fallback-link">
+                        <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                        Visit our Facebook page directly
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        <section class="connect-section">
+            <h2>Connect With Us</h2>
+            <p>
+                Don't miss out on our latest updates! Follow us on social media and 
+                be the first to know about new developments, insights, and opportunities.
+            </p>
+            
+            <div class="social-grid">
+                <a href="https://www.facebook.com/profile.php?id=61576892337524" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="social-card facebook">
+                    <div class="social-icon">
+                        <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                    </div>
+                    <div class="social-content">
+                        <h3>Facebook</h3>
+                        <p>Follow our page for updates, insights, and community discussions.</p>
+                    </div>
+                </a>
+                
+                <a href="https://www.instagram.com" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="social-card instagram">
+                    <div class="social-icon">
+                        <i class="fab fa-instagram" aria-hidden="true"></i>
+                    </div>
+                    <div class="social-content">
+                        <h3>Instagram</h3>
+                        <p>Visual stories and behind-the-scenes content from our journey.</p>
+                    </div>
+                </a>
+                
+                <a href="https://www.linkedin.com" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="social-card linkedin">
+                    <div class="social-icon">
+                        <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                    </div>
+                    <div class="social-content">
+                        <h3>LinkedIn</h3>
+                        <p>Professional insights, industry news, and networking opportunities.</p>
+                    </div>
+                </a>
+            </div>
+        </section>
     </main>
-    <footer class="footer">
-        &copy; 2025 Vekst. All rights reserved.
-        <div class="social-links">
-            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" title="Facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" title="Instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" title="LinkedIn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+    
+    <footer class="footer" role="contentinfo">
+        <p>&copy; 2025 Vekst. All rights reserved.</p>
+        <div class="social-links" role="list">
+            <a href="https://www.facebook.com/profile.php?id=61576892337524" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               title="Follow us on Facebook" 
+               aria-label="Follow Vekst on Facebook"
+               role="listitem">
+                <i class="fab fa-facebook-f" aria-hidden="true"></i>
+            </a>
+            <a href="https://www.instagram.com" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               title="Follow us on Instagram" 
+               aria-label="Follow Vekst on Instagram"
+               role="listitem">
+                <i class="fab fa-instagram" aria-hidden="true"></i>
+            </a>
+            <a href="https://www.linkedin.com" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               title="Connect with us on LinkedIn" 
+               aria-label="Connect with Vekst on LinkedIn"
+               role="listitem">
+                <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+            </a>
         </div>
     </footer>
+    
     <script>
-        // Hamburger menu toggle for mobile
-        const hamburger = document.querySelector('.hamburger-menu');
-        const navLinks = document.querySelector('.links');
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('open');
+        // Enhanced mobile menu functionality (same as index.html)
+        class MobileMenu {
+            constructor() {
+                this.hamburger = document.querySelector('.hamburger-menu');
+                this.navLinks = document.querySelector('.links');
+                this.body = document.body;
+                this.isOpen = false;
+                
+                this.init();
+            }
+            
+            init() {
+                if (this.hamburger && this.navLinks) {
+                    this.hamburger.addEventListener('click', this.toggle.bind(this));
+                    
+                    this.navLinks.addEventListener('click', (e) => {
+                        if (e.target.tagName === 'A') {
+                            this.close();
+                        }
+                    });
+                    
+                    document.addEventListener('click', (e) => {
+                        if (this.isOpen && !this.navLinks.contains(e.target) && !this.hamburger.contains(e.target)) {
+                            this.close();
+                        }
+                    });
+                    
+                    document.addEventListener('keydown', (e) => {
+                        if (e.key === 'Escape' && this.isOpen) {
+                            this.close();
+                        }
+                    });
+                }
+            }
+            
+            toggle() {
+                this.isOpen ? this.close() : this.open();
+            }
+            
+            open() {
+                this.navLinks.classList.add('open');
+                this.hamburger.setAttribute('aria-expanded', 'true');
+                this.body.style.overflow = 'hidden';
+                this.isOpen = true;
+            }
+            
+            close() {
+                this.navLinks.classList.remove('open');
+                this.hamburger.setAttribute('aria-expanded', 'false');
+                this.body.style.overflow = '';
+                this.isOpen = false;
+            }
+        }
+        
+        // Facebook feed management
+        class FacebookFeedManager {
+            constructor() {
+                this.loadingIndicator = document.getElementById('fb-loading');
+                this.fallbackContent = document.getElementById('fb-fallback');
+                this.fbContainer = document.querySelector('.facebook-container');
+                this.loadTimeout = null;
+                
+                this.init();
+            }
+            
+            init() {
+                // Set a timeout to show fallback if FB doesn't load
+                this.loadTimeout = setTimeout(() => {
+                    this.showFallback();
+                }, 10000); // 10 seconds timeout
+                
+                // Listen for FB SDK events
+                window.fbAsyncInit = () => {
+                    FB.init({
+                        xfbml: true,
+                        version: 'v19.0'
+                    });
+                    
+                    FB.Event.subscribe('xfbml.render', () => {
+                        this.hideLoading();
+                        if (this.loadTimeout) {
+                            clearTimeout(this.loadTimeout);
+                        }
+                    });
+                };
+                
+                // Fallback for when FB script fails to load
+                setTimeout(() => {
+                    if (typeof FB === 'undefined') {
+                        this.showFallback();
+                    }
+                }, 15000);
+            }
+            
+            hideLoading() {
+                if (this.loadingIndicator) {
+                    this.loadingIndicator.style.display = 'none';
+                }
+            }
+            
+            showFallback() {
+                this.hideLoading();
+                if (this.fallbackContent) {
+                    this.fallbackContent.style.display = 'block';
+                }
+                if (this.fbContainer) {
+                    this.fbContainer.style.display = 'none';
+                }
+            }
+        }
+        
+        // Initialize components when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            new MobileMenu();
+            new FacebookFeedManager();
         });
-
-        // Active link styling (optional, based on hash)
-        const links = document.querySelectorAll('.links a');
-        links.forEach(link => {
-            link.addEventListener('click', function() {
-                links.forEach(l => l.classList.remove('active'));
-                this.classList.add('active');
-            });
+        
+        // Enhanced error handling for external resources
+        window.addEventListener('error', (e) => {
+            if (e.target.src && e.target.src.includes('facebook.net')) {
+                console.warn('Facebook SDK failed to load');
+                // Could trigger fallback here if needed
+            }
         });
     </script>
 </body>

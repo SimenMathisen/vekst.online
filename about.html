@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Vekst</title>
+    <meta name="description" content="Learn about Vekst's mission, vision, and commitment to growth and innovation. Discover our story and values.">
+    <meta name="keywords" content="vekst, about, mission, vision, growth, innovation, company, team">
+    <meta name="author" content="Vekst">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://vekst.online/about.html">
+    <meta property="og:title" content="About Us | Vekst">
+    <meta property="og:description" content="Learn about Vekst's mission, vision, and commitment to growth and innovation.">
+    <meta property="og:image" content="https://vekst.online/images/vekst.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://vekst.online/about.html">
+    <meta property="twitter:title" content="About Us | Vekst">
+    <meta property="twitter:description" content="Learn about Vekst's mission, vision, and commitment to growth and innovation.">
+    <meta property="twitter:image" content="https://vekst.online/images/vekst.png">
+    
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="apple-touch-icon" href="images/vekst.png">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="css/styles.css" as="style">
+    <link rel="preload" href="images/vekst.png" as="image">
+</head>
+<body>
+    <header class="top-row">
+        <img src="images/vekst.png" alt="Vekst Company Logo" class="logo" loading="eager">
+        <button class="hamburger-menu" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="main-nav">
+            <i class="fas fa-bars" aria-hidden="true"></i>
+        </button>
+        <nav class="links" id="main-nav" role="navigation" aria-label="Main navigation">
+            <a href="index.html">
+                <i class="fas fa-home" aria-hidden="true"></i> 
+                <span>Home</span>
+            </a>
+            <a href="about.html" class="active" aria-current="page">
+                <i class="fas fa-info-circle" aria-hidden="true"></i> 
+                <span>About</span>
+            </a>
+            <a href="feed.html">
+                <i class="fas fa-seedling" aria-hidden="true"></i> 
+                <span>Feed</span>
+            </a>
+            <a href="contact.html">
+                <i class="fas fa-envelope" aria-hidden="true"></i> 
+                <span>Contact</span>
+            </a>
+        </nav>
+    </header>
+    
+    <main role="main">
+        <section class="page-header">
+            <h1>
+                <i class="fas fa-info-circle" aria-hidden="true"></i>
+                Om Vekst
+            </h1>      
+       
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+				ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+				laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
+				voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat 
+				non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
+				ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
+            </p>
+			
+			<div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-rocket" aria-hidden="true"></i>
+                    </div>
+                    <h3>Innovation</h3>
+                    <p>Cutting-edge solutions that drive progress and create new opportunities for growth.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-users" aria-hidden="true"></i>
+                    </div>
+                    <h3>Partnership</h3>
+                    <p>Building strong relationships with our clients to ensure long-term success and mutual growth.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line" aria-hidden="true"></i>
+                    </div>
+                    <h3>Growth</h3>
+                    <p>Sustainable development strategies that create lasting value and measurable results.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="footer" role="contentinfo">
+        <p>&copy; 2025 Vekst. All rights reserved.</p>
+        <div class="social-links" role="list">
+            <a href="https://www.facebook.com/profile.php?id=61576892337524" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               title="Follow us on Facebook" 
+               aria-label="Follow Vekst on Facebook"
+               role="listitem">
+                <i class="fab fa-facebook-f" aria-hidden="true"></i>
+            </a>
+            <a href="https://www.instagram.com" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               title="Follow us on Instagram" 
+               aria-label="Follow Vekst on Instagram"
+               role="listitem">
+                <i class="fab fa-instagram" aria-hidden="true"></i>
+            </a>
+            <a href="https://www.linkedin.com" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               title="Connect with us on LinkedIn" 
+               aria-label="Connect with Vekst on LinkedIn"
+               role="listitem">
+                <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+            </a>
+        </div>
+    </footer>
+    
+    <script>
+        // Enhanced mobile menu functionality
+        class MobileMenu {
+            constructor() {
+                this.hamburger = document.querySelector('.hamburger-menu');
+                this.navLinks = document.querySelector('.links');
+                this.body = document.body;
+                this.isOpen = false;
+                
+                this.init();
+            }
+            
+            init() {
+                if (this.hamburger && this.navLinks) {
+                    this.hamburger.addEventListener('click', this.toggle.bind(this));
+                    
+                    this.navLinks.addEventListener('click', (e) => {
+                        if (e.target.tagName === 'A') {
+                            this.close();
+                        }
+                    });
+                    
+                    document.addEventListener('click', (e) => {
+                        if (this.isOpen && !this.navLinks.contains(e.target) && !this.hamburger.contains(e.target)) {
+                            this.close();
+                        }
+                    });
+                    
+                    document.addEventListener('keydown', (e) => {
+                        if (e.key === 'Escape' && this.isOpen) {
+                            this.close();
+                        }
+                    });
+                }
+            }
+            
+            toggle() {
+                this.isOpen ? this.close() : this.open();
+            }
+            
+            open() {
+                this.navLinks.classList.add('open');
+                this.hamburger.setAttribute('aria-expanded', 'true');
+                this.body.style.overflow = 'hidden';
+                this.isOpen = true;
+            }
+            
+            close() {
+                this.navLinks.classList.remove('open');
+                this.hamburger.setAttribute('aria-expanded', 'false');
+                this.body.style.overflow = '';
+                this.isOpen = false;
+            }
+        }
+        
+        // Initialize components when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            new MobileMenu();
+        });
+        
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-in');
+                }
+            });
+        }, observerOptions);
+        
+        // Observe elements for animation
+        document.addEventListener('DOMContentLoaded', () => {
+            const animateElements = document.querySelectorAll('.value-card, .step, .mission-card, .vision-card');
+            animateElements.forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>

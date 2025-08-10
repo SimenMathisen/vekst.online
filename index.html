@@ -3,63 +3,230 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vekst</title>
-    <meta name="description" content="Welcome to Vekst - Learn about our services and offerings.">
+    <title>Vekst - Ville Vekster</title>
+    <meta name="description" content="Velkommen til Vekst. Din ekspert på ville vekster!">
+    <meta name="keywords" content="vekst, growth, innovation, business, development">
+    <meta name="author" content="Vekst">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://vekst.online/">
+    <meta property="og:title" content="Vekst">
+    <meta property="og:description" content="Velkommen til Vekst. Din ekspert på ville vekster!">
+    <meta property="og:image" content="https://vekst.online/images/vekst.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://vekst.online/">
+    <meta property="twitter:title" content="Vekst - Ville Vekster">
+    <meta property="twitter:description" content="Velkommen til Vekst. Din ekspert på ville vekster!">
+    <meta property="twitter:image" content="https://vekst.online/images/vekst.png">
+    
     <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="apple-touch-icon" href="images/vekst.png">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
-    <!-- Placeholder for analytics (e.g., Google Analytics) -->
-    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXX-X"></script>
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="css/styles.css" as="style">
+    <link rel="preload" href="images/vekst.png" as="image">
+    
+    <!-- Analytics placeholder -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'UA-XXXXXXX-X');
+      gtag('config', 'GA_MEASUREMENT_ID');
     </script> -->
 </head>
 <body>
-    <header class="top-row">
-        <img src="images/vekst.png" alt="Vekst Company Logo" class="logo">
-        <button class="hamburger-menu" aria-label="Toggle navigation" aria-controls="main-nav">
-            <i class="fas fa-bars"></i>
-        </button>
-        <nav class="links" id="main-nav" aria-label="Main navigation">
-            <a href="#home" class="active"><i class="fas fa-home"></i> Home</a>
-            <a href="#about"><i class="fas fa-info-circle"></i> About</a>
-            <a href="feed.html"><i class="fas fa-seedling"></i> Feed</a>
-            <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
-        </nav>
-    </header>
-    <main>
-        <h1>Welcome to Vekst</h1>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed urna dui. Donec et condimentum magna. Aliquam commodo, massa a lacinia pulvinar, nulla augue efficitur lectus, nec porttitor risus ex convallis massa. Maecenas et massa ligula.
-        </p>
+    {% include header.html %}
+    
+    <main role="main">
+        <section id="home" class="hero-section">
+            <h1>Velkommen til Vekst - Ville Vekster</h1>
+            <p class="intro-text">
+                Velkommen til Vekst. Din ekspert på ville vekster!
+				Velkommen til Vekst. Din ekspert på ville vekster!
+				Velkommen til Vekst. Din ekspert på ville vekster!
+            </p>
+        </section>
     </main>
-    <footer class="footer">
-        &copy; 2025 Vekst. All rights reserved.
-        <div class="social-links">
-            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" title="Facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" title="Instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" title="LinkedIn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+    
+    <footer class="footer" role="contentinfo">
+        <p>&copy; 2025 Vekst. All rights reserved.</p>
+        <div class="social-links" role="list">
+            <a href="https://www.facebook.com/profile.php?id=61576892337524" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               title="Follow us on Facebook" 
+               aria-label="Follow Vekst on Facebook"
+               role="listitem">
+                <i class="fab fa-facebook-f" aria-hidden="true"></i>
+            </a>
+            <a href="https://www.instagram.com" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               title="Follow us on Instagram" 
+               aria-label="Follow Vekst on Instagram"
+               role="listitem">
+                <i class="fab fa-instagram" aria-hidden="true"></i>
+            </a>
+            <a href="https://www.linkedin.com" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               title="Connect with us on LinkedIn" 
+               aria-label="Connect with Vekst on LinkedIn"
+               role="listitem">
+                <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+            </a>
         </div>
     </footer>
+    
     <script>
-        // Hamburger menu toggle for mobile
-        const hamburger = document.querySelector('.hamburger-menu');
-        const navLinks = document.querySelector('.links');
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('open');
+        // Enhanced hamburger menu functionality
+        class MobileMenu {
+            constructor() {
+                this.hamburger = document.querySelector('.hamburger-menu');
+                this.navLinks = document.querySelector('.links');
+                this.body = document.body;
+                this.isOpen = false;
+                
+                this.init();
+            }
+            
+            init() {
+                if (this.hamburger && this.navLinks) {
+                    this.hamburger.addEventListener('click', this.toggle.bind(this));
+                    
+                    // Close menu when clicking on links
+                    this.navLinks.addEventListener('click', (e) => {
+                        if (e.target.tagName === 'A') {
+                            this.close();
+                        }
+                    });
+                    
+                    // Close menu when clicking outside
+                    document.addEventListener('click', (e) => {
+                        if (this.isOpen && !this.navLinks.contains(e.target) && !this.hamburger.contains(e.target)) {
+                            this.close();
+                        }
+                    });
+                    
+                    // Close menu on escape key
+                    document.addEventListener('keydown', (e) => {
+                        if (e.key === 'Escape' && this.isOpen) {
+                            this.close();
+                        }
+                    });
+                }
+            }
+            
+            toggle() {
+                this.isOpen ? this.close() : this.open();
+            }
+            
+            open() {
+                this.navLinks.classList.add('open');
+                this.hamburger.setAttribute('aria-expanded', 'true');
+                this.body.style.overflow = 'hidden';
+                this.isOpen = true;
+            }
+            
+            close() {
+                this.navLinks.classList.remove('open');
+                this.hamburger.setAttribute('aria-expanded', 'false');
+                this.body.style.overflow = '';
+                this.isOpen = false;
+            }
+        }
+        
+        // Enhanced active link management
+        class Navigation {
+            constructor() {
+                this.links = document.querySelectorAll('.links a');
+                this.sections = document.querySelectorAll('section[id]');
+                
+                this.init();
+            }
+            
+            init() {
+                // Handle click events
+                this.links.forEach(link => {
+                    link.addEventListener('click', (e) => {
+                        const href = link.getAttribute('href');
+                        
+                        if (href.startsWith('#')) {
+                            e.preventDefault();
+                            this.setActiveLink(link);
+                            this.scrollToSection(href);
+                        }
+                    });
+                });
+                
+                // Handle scroll events for automatic active state
+                window.addEventListener('scroll', this.handleScroll.bind(this));
+            }
+            
+            setActiveLink(activeLink) {
+                this.links.forEach(link => {
+                    link.classList.remove('active');
+                    link.removeAttribute('aria-current');
+                });
+                
+                activeLink.classList.add('active');
+                activeLink.setAttribute('aria-current', 'page');
+            }
+            
+            scrollToSection(targetId) {
+                const target = document.querySelector(targetId);
+                if (target) {
+                    const offsetTop = target.offsetTop - 100; // Account for sticky header
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+            
+            handleScroll() {
+                const scrollPosition = window.scrollY + 150;
+                
+                this.sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.offsetHeight;
+                    const sectionId = section.getAttribute('id');
+                    
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                        const correspondingLink = document.querySelector(`.links a[href="#${sectionId}"]`);
+                        if (correspondingLink) {
+                            this.setActiveLink(correspondingLink);
+                        }
+                    }
+                });
+            }
+        }
+        
+        // Initialize components when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            new MobileMenu();
+            new Navigation();
         });
-
-        // Active link styling (optional, based on hash)
-        const links = document.querySelectorAll('.links a');
-        links.forEach(link => {
-            link.addEventListener('click', function() {
-                links.forEach(l => l.classList.remove('active'));
-                this.classList.add('active');
+        
+        // Performance optimization: Lazy load images
+        if ('loading' in HTMLImageElement.prototype) {
+            const images = document.querySelectorAll('img[loading="lazy"]');
+            images.forEach(img => {
+                img.src = img.dataset.src || img.src;
             });
-        });
+        } else {
+            // Fallback for browsers that don't support lazy loading
+            const script = document.createElement('script');
+            script.src = 'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js';
+            document.body.appendChild(script);
+        }
     </script>
 </body>
 </html>
